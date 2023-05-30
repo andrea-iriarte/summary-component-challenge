@@ -1,38 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+:root {
+  --light-red: hsl(0, 100%, 67%);
+  --orange-yellow: hsl(39, 100%, 56%);
+  --green-teal: hsl(166, 100%, 37%);
+  --cobalt-blue: hsl(234, 85%, 45%);
+
+  --light-red-bg: hsla(0, 100%, 67%, 0.05);
+  --orange-yellow-bg: hsl(39, 100%, 56%, 0.05);
+  --green-teal-bg: hsla(166, 100%, 37%, 0.05);
+  --cobalt-blue-bg: hsla(234, 85%, 45%, 0.05);
+
+  --light-blue-slate: hsl(252, 100%, 67%);
+  --light-royal-blue: hsl(241, 81%, 54%);
+  --violet-blue: hsla(256, 72%, 46%, 1);
+  --persian-blue: hsla(241, 72%, 46%, 0);
+
+  --white: hsl(0 ,0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+  box-sizing: border-box;
+
+}
+
+body {
+  font-family: 'Hanken Grotesk', sans-serif;
+}
+
+.light-red {
+  color: var(--light-red)
+}
+.light-red-bg {
+  background-color: var(--light-red-bg)
+}
+
+.orange-yellow {
+  color: var(--orange-yellow)
+}
+.orange-yellow-bg {
+  background-color: var(--orange-yellow-bg)
+}
+
+.green-teal {
+  color: var(--green-teal)
+}
+.green-teal-bg {
+  background-color: var(--green-teal-bg)
+}
+
+.cobalt-blue {
+  color: var(--cobalt-blue)
+}
+.cobalt-blue-bg {
+  background-color: var(--cobalt-blue-bg)
+}
+
+.light-lavender-text {
+  color: var(--light-lavender)
+}
+
+.white-text {
+  color: white
+}
+
+.navy-text {
+  color: var(--dark-gray-blue)
+}
+.navy-bg {
+  background-color: var(--dark-gray-blue);
+}
+
+
+
 .App {
   text-align: center;
+  width: 65%;
+  height: 450px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: var(--white);
+  filter: drop-shadow(0.5rem 0.5rem 0.5rem var(--pale-blue));
+  border-radius: 1.5rem;
+  display: flex;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.result {
+  width: 50%;
+  height: 100%;
+  border-radius: 1.5rem;
+  background-image: linear-gradient(var(--light-blue-slate), var(--light-royal-blue));
+  color: var(--white);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+}
+
+.circle {
+  height: 180px;
+  width: 180px;
+  background-image: linear-gradient(var(--violet-blue
+  ), var(--persian-blue));
+  border-radius: 50%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.result-header {
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding-top: 1rem;
+  padding-bottom: 0;
+  margin-bottom: 1.5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
+ 
+  
 }
+
+.numberDesc {
+  margin: 0;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+ 
+}
+
+.message-desc {
+  margin-top: 0;
+}
+
+.summary {
+  width: 50%;
+}
+
+.summary-header {
+  font-size: 1.5rem;
+  text-align: left;
+  margin-left: 10%;
+  margin-top: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+.category {
+  display: flex;
+  width: 80%;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 1rem;
+  height: 3rem;
+  justify-content: space-between;
+  font-size: 1rem;
+  
+  
+}
+
+.category-header {
+  display: flex;
+  margin-left: 1rem
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.score {
+  margin-right: 1.5rem;
+  font-weight: 700;
+  
+}
+
+.score-basic{
+  color: rgb(166, 166, 166);
+}
+
+.icon {
+  font-size: 1.5 rem;
+}
+
+.button {
+  margin: 2.5rem;
+  height: 3rem;
+  width: 80%;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.button:hover, .button:focus{
+  background-image: linear-gradient(var(--light-blue-slate), var(--light-royal-blue));
+}
+
+
+@media only screen and (max-width: 800px) {
+  .App {
+    flex-direction: column;
+    height: 700px;
+    font-size: 12px;
+  }
+  .result {
+    width: 100%;
+    height: 40%;
+
+  }
+  .summary {
+    width: 100%;
+    height: 60%;
+  }
+
+  .number {
+    font-size: 2.5rem;
+  }
+
+  .circle {
+    height: 100px !important;
+    width: 100px;
+  }
+ 
+  
+}
+
+
+
+
+
+
+
+
+
